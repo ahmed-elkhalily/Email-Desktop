@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <!-- <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script> -->
+    <link rel="stylesheet" href="./build/css/output.css">
+    <title>Document</title>
+    <style>
+        #myMap { height: 500px }
+    </style>
+</head>
+<body>
+    <!-- <div id="myMap"></div> -->
+    <form action="" id="mufind">
+
+        <div class="btbti">
+            <input type="text" name="" id="input">
+            <button type="submit">submit</button>
+        </div>
+    </form>
+    <!-- <canvas id="chart"></canvas> -->
+    <!-- <script src="./chart.min.js"></script> -->
+    <script>
+        mufind.onsubmit = e => {
+            e.preventDefault()
+            if (input.value === ""){
+                console.log("non");
+                
+            } else {
+                console.log(e);
+            }
+        }
+    /* Get Geolocation And Add It To Server-Side */
+/* 
+    * working with maps with (ISS) & (Leaflet.js)
+*/
+        // var circle = L.circle([0, 0], {
+        //     color: 'red',
+        //     fillColor: '#f03',
+        //     fillOpacity: 0.5,
+        //     radius: 500000
+        // }).addTo(mymap)    
+
+        // // Satalite
+        // const url = "https://api.wheretheiss.at/v1/satellites/25544"
+        // createMap()
+        // async function createMap() {
+        //     const response = await fetch(url)
+        //     const data = await response.json()
+        //     // return data
+        //     const {longitude, latitude} = data
+        //     var mymap = L.map('myMap').setView([latitude, longitude], 7)
+        //     L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        //         attribution: '&copy <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+        //         zoomControl: false
+        //     }).addTo(mymap)
+        //     L.marker([latitude, longitude]).addTo(mymap)
+        // }
+
+
+
+
+
+
+/* 
+    * using chart js to visualize data
+    * chart.js ... how to use multiple lines here 
+*/
+        // drawChart()
+        // async function drawChart() {
+        //     const myData = await fetchingData()
+        //     const ctx = document.getElementById('chart').getContext('2d')
+        //     const myChart = new Chart(ctx, {
+        //         type: 'line',
+        //         data: {
+        //             labels: myData.xs,
+        //             datasets: [{
+        //                 label: 'Global-mean monthly, seasonal, and annual means',
+        //                 fill: false,
+        //                 data: myData.ys,
+        //                 backgroundColor:  'rgba(255, 99, 132, 0.2)',
+        //                 borderColor: 'rgba(255, 99, 132, 1)',
+        //                 borderWidth: 1
+        //             } 
+        //         ]},
+        //         options: {
+        //             events: ['click'],
+        //             scales: {
+        //         yAxes: [{
+        //             ticks: {
+        //                 callback: function(value) {
+        //                     return value+ "°"
+        //                         }
+        //                     }   
+        //                 }]
+        //             }
+        //         }
+        //     })
+        // }
+        // const files = ["text.csv", "GLB.Ts+dSST.csv"]
+        // let xData = []
+        // for (let i = 0 i < files.length i++) {
+        //     fetchingData().then(data=> {
+        //         xData.push(data.xs)
+        //     })
+        //     async function fetchingData () {
+        //         let xs = []
+        //         let ys = []
+        //         const response = await fetch(files[i]) //GLB.Ts+dSST.csv
+        //         const data = await response.text()
+        //         const table = data.split("\n").slice(1)
+        //         table.forEach(row => {
+        //             const columns = row.split(",")
+        //             const year = columns[0]
+        //             const temp = Number.parseFloat(columns[1]) + 14
+        //             xs.push(year)
+        //             ys.push(temp)
+        //         })
+        //         return {xs, ys}
+        //     }
+        // }
+    </script>
+</body>
+</html>
